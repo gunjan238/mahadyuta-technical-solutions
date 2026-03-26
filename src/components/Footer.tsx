@@ -166,7 +166,7 @@ const Footer = () => (
       </div>
 
       {/* ── Bottom bar ── */}
-      <div
+      {/* <div
         className="pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-4"
         style={{ borderColor: "rgba(251,191,36,0.25)" }}
       >
@@ -177,8 +177,35 @@ const Footer = () => (
           <span className="cursor-pointer hover:text-amber-600 transition-colors">Privacy Policy</span>
           <span className="cursor-pointer hover:text-amber-600 transition-colors">Terms of Service</span>
         </div>
+      </div> */}
+
+      <div
+        className="pt-6 border-t flex flex-col md:flex-row items-center justify-between gap-4"
+        style={{ borderColor: "rgba(251,191,36,0.25)" }}
+      >
+        <p className="text-xs text-slate-400 text-center md:text-left">
+          © {new Date().getFullYear()} Mahadyuta Technical Solutions Pvt. Ltd. All rights reserved.
+          <br className="md:hidden" />
+          <span className="block md:inline md:ml-20">
+           © Designed & Developed by{" "}
+            <span className="text-amber-600 font-medium hover:underline ">
+              Snapit
+            </span>
+          </span>
+        </p>
+
+        <div className="flex gap-4 text-xs text-slate-400">
+          <span className="cursor-pointer hover:text-amber-600 transition-colors">
+            Privacy Policy
+          </span>
+          <span className="cursor-pointer hover:text-amber-600 transition-colors">
+            Terms of Service
+          </span>
+        </div>
       </div>
     </div>
+
+
   </footer>
 );
 
