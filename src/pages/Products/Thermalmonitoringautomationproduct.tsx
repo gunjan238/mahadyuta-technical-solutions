@@ -1,5 +1,3 @@
-
-
 /* eslint-disable react-hooks/rules-of-hooks */
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -464,7 +462,7 @@ const css = `
 /* ═══════════════════════════════════════════════════════════
    PAGE
 ═══════════════════════════════════════════════════════════ */
-const ThermalMonitoringAutomationProduct = () => {
+const Thermalmonitoringautomationproduct = () => {
   const refFeat    = useFU(0);
   const refInstall = useFU(100);
   const refHow     = useFU(0);
@@ -676,4 +674,4 @@ const ThermalMonitoringAutomationProduct = () => {
   );
 };
 
-export default ThermalMonitoringAutomationProduct;
+export default Thermalmonitoringautomationproduct;

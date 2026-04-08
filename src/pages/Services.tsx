@@ -37,7 +37,7 @@ const servicesData = [
     ],
   },
   {
-    category: "Information Technology",
+    category: "IIoT-Based CBM (Condition-Based Monitoring with IIoT)",
     Icon: Shield,
     accent: "#f97316",
     num: "03",
@@ -433,7 +433,8 @@ const Services = () => {
               transition={{ delay: 0.1 }}
               className="text-white/80 max-w-2xl mx-auto mb-10 text-base md:text-lg"
             >
-              Partner with Mahadyuta for cutting-edge predictive maintenance, energy optimization, and Information Technology solutions.
+              Partner with Mahadyuta for cutting-edge predictive maintenance, energy optimization, and IIoT-Based CBM (Condition-Based 
+Monitoring with IIoT) solutions.
             </motion.p>
             <MagneticBtn
               to="/contact"

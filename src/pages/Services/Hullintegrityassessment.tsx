@@ -352,7 +352,7 @@ const HullIntegrityAssessment = () => {
             </h1>
 
             <p className="hi-flicker" style={{
-              fontSize: "clamp(11px,1.2vw,14px)", fontWeight: 700, color: "#b45309",
+              fontSize: "clamp(11px,1.2vw,14px)", fontWeight: 700, color: "#062979",
               letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 14,
             }}>
               ⚡ Hidden hull damage and seal failures are a risk you cannot afford to ignore

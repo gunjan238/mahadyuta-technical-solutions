@@ -431,7 +431,7 @@ const css = `
 
   @keyframes vm-fadein { 0%{opacity:0;transform:translateY(6px);letter-spacing:0.13em;} 60%{opacity:0.85;} 100%{opacity:1;transform:translateY(0);letter-spacing:0.04em;} }
   @keyframes vm-flicker { 0%,19%,21%,23%,25%,54%,56%,100%{opacity:1;text-shadow:0 0 8px rgba(245,158,11,0.85),0 0 20px rgba(234,88,12,0.5);} 20%,24%,55%{opacity:0.35;text-shadow:none;} }
-  .vm-flicker { opacity:0; animation:vm-fadein 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s forwards, vm-flicker 4s ease-in-out 2s infinite; font-size:clamp(13px,1.2vw,15px); font-weight:600; background:linear-gradient(90deg,#f59e0b,#ea580c); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; display:block; margin-top:10px; margin-bottom:18px; }
+  .vm-flicker { opacity:0; animation:vm-fadein 1.4s cubic-bezier(0.22,1,0.36,1) 0.3s forwards, vm-flicker 4s ease-in-out 2s infinite; font-size:clamp(13px,1.2vw,15px); font-weight:600; color:#062979; display:block; margin-top:10px; margin-bottom:18px; }
 
   .fu { opacity:0; transform:translateY(22px); transition:opacity 0.55s ease,transform 0.55s ease; }
   .fu.vis { opacity:1; transform:translateY(0); }

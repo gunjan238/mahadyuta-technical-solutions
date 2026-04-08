@@ -89,7 +89,7 @@
 //       <h2 style={{ marginBottom: 20 }}>Contact Us</h2>
 
 //       <form onSubmit={handleSubmit} style={{ display: "grid", gap: 12 }}>
-        
+
 //         <Input
 //           name="name"
 //           placeholder="Full Name *"
@@ -156,8 +156,8 @@
 
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button }   from "@/components/ui/button";
-import { Input }    from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Phone, Mail, MapPin, Clock, Send,
@@ -361,7 +361,7 @@ const contactDetails = [
 
 const regionalOffices = [
   { region: "Visakhapatnam", phone: "+91 8179476459", tel: "tel:+918179476459" },
-  { region: "Kerala",         phone: "+91 9618647755", tel: "tel:+919618647755" },
+  { region: "Kerala", phone: "+91 9618647755", tel: "tel:+919618647755" },
 ];
 
 /* ═══════════════════════════════════════════════════
@@ -369,7 +369,7 @@ const regionalOffices = [
 ═══════════════════════════════════════════════════ */
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm]       = useState<FormState>(initialForm);
+  const [form, setForm] = useState<FormState>(initialForm);
   const [sending, setSending] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -394,7 +394,7 @@ const Contact = () => {
     setSending(true);
 
     try {
-      const res  = await fetch("http://localhost:5000/send-email", {
+      const res = await fetch("http://localhost:5000/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -425,42 +425,42 @@ const Contact = () => {
         <div className="ct-hero-wash" /><div className="ct-hero-dots" />
         <div className="ct-hero-burst" /><div className="ct-hero-sky" />
 
-        <div style={{ position:"relative", maxWidth:1280, margin:"0 auto", padding:"64px 28px 56px", width:"100%" }}>
+        <div style={{ position: "relative", maxWidth: 1280, margin: "0 auto", padding: "64px 28px 56px", width: "100%" }}>
 
-          <div style={{ display:"flex", alignItems:"center", gap:6, marginBottom:24 }}>
-            <Link to="/" style={{ fontSize:12.5, color:"#64748b", textDecoration:"none" }}>Home</Link>
-            <ChevronRight size={12} style={{ color:"#cbd5e1" }} />
-            <span style={{ fontSize:12.5, color:"#334155", fontWeight:500 }}>Contact</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 24 }}>
+            <Link to="/" style={{ fontSize: 12.5, color: "#64748b", textDecoration: "none" }}>Home</Link>
+            <ChevronRight size={12} style={{ color: "#cbd5e1" }} />
+            <span style={{ fontSize: 12.5, color: "#334155", fontWeight: 500 }}>Contact</span>
           </div>
 
-          <span style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(245,158,11,0.10)", border:"1px solid rgba(245,158,11,0.30)", color:"#b45309", fontSize:11, fontWeight:700, letterSpacing:"0.09em", textTransform:"uppercase", padding:"5px 14px", borderRadius:999, marginBottom:16 }}>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(245,158,11,0.10)", border: "1px solid rgba(245,158,11,0.30)", color: "#b45309", fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", padding: "5px 14px", borderRadius: 999, marginBottom: 16 }}>
             <MessageSquare size={11} /> Get in Touch
           </span>
 
-          <h1 style={{ fontSize:"clamp(28px,4.5vw,52px)", fontWeight:800, color:"#1e293b", lineHeight:1.06, marginBottom:14 }}>
+          <h1 style={{ fontSize: "clamp(28px,4.5vw,52px)", fontWeight: 800, color: "#1e293b", lineHeight: 1.06, marginBottom: 14 }}>
             Let's Discuss Your{" "}
-            <span style={{ background:"linear-gradient(90deg,#f59e0b 0%,#ea580c 60%,#f59e0b 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
+            <span style={{ background: "linear-gradient(90deg,#f59e0b 0%,#ea580c 60%,#f59e0b 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Requirements
             </span>
           </h1>
-          <p style={{ fontSize:"clamp(14px,1.4vw,17px)", color:"#475569", lineHeight:1.75, maxWidth:520 }}>
+          <p style={{ fontSize: "clamp(14px,1.4vw,17px)", color: "#475569", lineHeight: 1.75, maxWidth: 520 }}>
             Need a site audit, product information, or a custom solution? Drop us a message and we'll respond within 24 hours.
           </p>
         </div>
       </section>
 
       {/* ════════════════ MAIN GRID ════════════════ */}
-      <section style={{ background:"linear-gradient(160deg,#fafaf9 0%,#f0f9ff 100%)", padding:"72px 28px" }}>
-        <div style={{ maxWidth:1280, margin:"0 auto" }} className="ct-grid">
+      <section style={{ background: "linear-gradient(160deg,#fafaf9 0%,#f0f9ff 100%)", padding: "72px 28px" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }} className="ct-grid">
 
           {/* ── LEFT — Form ── */}
           <div className="ct-form-card">
 
-            <div style={{ marginBottom:28 }}>
-              <h2 style={{ fontSize:22, fontWeight:700, color:"#0f1117", marginBottom:6 }}>
+            <div style={{ marginBottom: 28 }}>
+              <h2 style={{ fontSize: 22, fontWeight: 700, color: "#0f1117", marginBottom: 6 }}>
                 Send Us a Message
               </h2>
-              <p style={{ fontSize:14, color:"#64748b" }}>
+              <p style={{ fontSize: 14, color: "#64748b" }}>
                 Fill in the form below and our team will get back to you shortly.
               </p>
             </div>
@@ -475,7 +475,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit}>
 
               {/* Row 1 — Name + Email */}
-              <div className="ct-row" style={{ marginBottom:16 }}>
+              <div className="ct-row" style={{ marginBottom: 16 }}>
                 <div>
                   <label className="ct-label">Full Name <span className="ct-required">*</span></label>
                   <Input
@@ -495,7 +495,7 @@ const Contact = () => {
               </div>
 
               {/* Row 2 — Phone + Company */}
-              <div className="ct-row" style={{ marginBottom:16 }}>
+              <div className="ct-row" style={{ marginBottom: 16 }}>
                 <div>
                   <label className="ct-label">Phone Number</label>
                   <Input
@@ -515,7 +515,7 @@ const Contact = () => {
               </div>
 
               {/* Subject */}
-              <div style={{ marginBottom:16 }}>
+              <div style={{ marginBottom: 16 }}>
                 <label className="ct-label">Subject</label>
                 <Input
                   name="subject" className="ct-input"
@@ -525,7 +525,7 @@ const Contact = () => {
               </div>
 
               {/* Message */}
-              <div style={{ marginBottom:28 }}>
+              <div style={{ marginBottom: 28 }}>
                 <label className="ct-label">Message <span className="ct-required">*</span></label>
                 <Textarea
                   name="message" className="ct-textarea"
@@ -538,25 +538,25 @@ const Contact = () => {
               <Button type="submit" className="ct-submit" disabled={sending}>
                 {sending
                   ? "Sending…"
-                  : <><Send size={15} style={{ marginRight:8 }} />Submit Enquiry</>
+                  : <><Send size={15} style={{ marginRight: 8 }} />Submit Enquiry</>
                 }
               </Button>
 
-              <p style={{ fontSize:12, color:"#94a3b8", marginTop:12, textAlign:"center" }}>
+              <p style={{ fontSize: 12, color: "#94a3b8", marginTop: 12, textAlign: "center" }}>
                 <span className="ct-required">*</span> Required fields. We never share your data.
               </p>
             </form>
           </div>
 
           {/* ── RIGHT — Info ── */}
-          <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
 
             <div>
-              <div style={{ display:"inline-flex", alignItems:"center", gap:6, background:"rgba(245,158,11,0.08)", border:"1px solid rgba(245,158,11,0.22)", color:"#b45309", fontSize:11, fontWeight:700, letterSpacing:"0.09em", textTransform:"uppercase", padding:"5px 14px", borderRadius:999, marginBottom:14 }}>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.22)", color: "#b45309", fontSize: 11, fontWeight: 700, letterSpacing: "0.09em", textTransform: "uppercase", padding: "5px 14px", borderRadius: 999, marginBottom: 14 }}>
                 <Phone size={11} /> Contact Details
               </div>
-              <h2 style={{ fontSize:20, fontWeight:700, color:"#0f1117", marginBottom:4 }}>Reach Us Directly</h2>
-              <p style={{ fontSize:13.5, color:"#64748b", lineHeight:1.6 }}>
+              <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0f1117", marginBottom: 4 }}>Reach Us Directly</h2>
+              <p style={{ fontSize: 13.5, color: "#64748b", lineHeight: 1.6 }}>
                 Available Monday–Saturday, 9 AM–6 PM IST.
               </p>
             </div>
@@ -566,18 +566,18 @@ const Contact = () => {
               <div key={item.label} className="ct-info-card">
                 <div className="ct-info-icon"><item.icon size={18} /></div>
                 <div>
-                  <p style={{ fontSize:11, fontWeight:700, color:"#94a3b8", textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:4 }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 4 }}>
                     {item.label}
                   </p>
                   {item.lines.map((line, i) =>
                     item.links?.[i] ? (
                       <a key={line} href={item.links[i]}
-                        style={{ display:"block", fontSize:14, color:"#334155", textDecoration:"none", fontWeight:500, lineHeight:1.65, transition:"color 0.15s" }}
+                        style={{ display: "block", fontSize: 14, color: "#334155", textDecoration: "none", fontWeight: 500, lineHeight: 1.65, transition: "color 0.15s" }}
                         onMouseEnter={e => (e.currentTarget.style.color = "#f59e0b")}
                         onMouseLeave={e => (e.currentTarget.style.color = "#334155")}
                       >{line}</a>
                     ) : (
-                      <p key={line} style={{ fontSize:14, color:"#475569", lineHeight:1.65, margin:0 }}>{line}</p>
+                      <p key={line} style={{ fontSize: 14, color: "#475569", lineHeight: 1.65, margin: 0 }}>{line}</p>
                     )
                   )}
                 </div>
@@ -585,16 +585,16 @@ const Contact = () => {
             ))}
 
             {/* Regional offices */}
-            <div style={{ background:"#fff", border:"1px solid #eef0f4", borderRadius:16, padding:"16px 18px", boxShadow:"0 2px 10px rgba(0,0,0,0.04)" }}>
-              <p style={{ fontSize:11, fontWeight:700, color:"#94a3b8", textTransform:"uppercase", letterSpacing:"0.07em", marginBottom:12 }}>
+            <div style={{ background: "#fff", border: "1px solid #eef0f4", borderRadius: 16, padding: "16px 18px", boxShadow: "0 2px 10px rgba(0,0,0,0.04)" }}>
+              <p style={{ fontSize: 11, fontWeight: 700, color: "#94a3b8", textTransform: "uppercase", letterSpacing: "0.07em", marginBottom: 12 }}>
                 Regional Offices
               </p>
-              <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
                 {regionalOffices.map((r) => (
-                  <div key={r.region} style={{ display:"flex", alignItems:"center", justifyContent:"space-between", gap:12 }}>
+                  <div key={r.region} style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12 }}>
                     <span className="ct-region-badge">{r.region}</span>
                     <a href={r.tel}
-                      style={{ fontSize:14, fontWeight:600, color:"#334155", textDecoration:"none", transition:"color 0.15s" }}
+                      style={{ fontSize: 14, fontWeight: 600, color: "#334155", textDecoration: "none", transition: "color 0.15s" }}
                       onMouseEnter={e => (e.currentTarget.style.color = "#f59e0b")}
                       onMouseLeave={e => (e.currentTarget.style.color = "#334155")}
                     >{r.phone}</a>
@@ -608,12 +608,17 @@ const Contact = () => {
       </section>
 
       {/* ════════════════ MAP ════════════════ */}
-      <section style={{ background:"#fffbeb", padding:"0 28px 72px" }}>
-        <div style={{ maxWidth:1280, margin:"0 auto" }}>
-          <div style={{ paddingTop:8, marginBottom:24 }}>
-            <h2 style={{ fontSize:22, fontWeight:700, color:"#0f1117", marginBottom:6 }}>Find Us</h2>
-            <p style={{ fontSize:14, color:"#64748b" }}>
-              B-429, Silver Springs, Taloja MIDC, Navi Mumbai – 410 208
+      <section style={{ background: "#fffbeb", padding: "0 28px 72px" }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ paddingTop: 8, marginBottom: 24 }}>
+            <h2 style={{ fontSize: 22, fontWeight: 700, color: "#0f1117", marginBottom: 6 }}>Visit Our Head Office
+            </h2>
+            <p style={{ fontSize: 14, color: "#64748b", fontWeight: 600 }}>
+              Mahadyuta Technical
+              Solutions Pvt. Ltd.
+              headquartered in the Taloja
+              Industrial Area of Navi
+              Mumbai.
             </p>
           </div>
           <div className="ct-map">
@@ -621,7 +626,7 @@ const Contact = () => {
               title="Mahadyuta Technical Solutions Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.0!2d73.07!3d18.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU4JzEyLjAiTiA3M8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
               width="100%" height="380"
-              style={{ display:"block", border:0 }}
+              style={{ display: "block", border: 0 }}
               allowFullScreen loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />

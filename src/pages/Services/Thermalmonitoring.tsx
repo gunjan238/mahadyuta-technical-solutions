@@ -375,7 +375,7 @@ const ThermalMonitoringAutomation = () => {
             </h1>
 
             <p className="tm-flicker" style={{
-              fontSize: "clamp(11px,1.2vw,14px)", fontWeight: 700, color: "#b45309",
+              fontSize: "clamp(11px,1.2vw,14px)", fontWeight: 700, color: "#062979",
               letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 14,
             }}>
               ⚡ Hotspots developing right now could shut down your plant tomorrow
