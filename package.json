@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "start": "node server.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -95,13 +96,13 @@
   "main": "eslint.config.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gunjan238/local-offer-hub.git"
+    "url": "git+https://github.com/gunjan238/mahadyuta-technical-solutions.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gunjan238/local-offer-hub/issues"
+    "url": "https://github.com/gunjan238/mahadyuta-technical-solutions.git/issues"
   },
-  "homepage": "https://github.com/gunjan238/local-offer-hub#readme"
+  "homepage": "https://github.com/gunjan238/mahadyuta-technical-solutions#readme"
 }
