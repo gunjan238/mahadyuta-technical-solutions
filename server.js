@@ -53,6 +53,7 @@
 
 
 // server.js
+// server.js
 
 import express from "express";
 import nodemailer from "nodemailer";
@@ -64,26 +65,35 @@ dotenv.config();
 const app = express();
 
 /* =========================================================
+   Health Check Route (Recommended for Render)
+========================================================= */
+app.get("/", (req, res) => {
+  res.send("Backend Running Successfully");
+});
+
+/* =========================================================
    Middleware
 ========================================================= */
 app.use(
   cors({
     origin: [
       "http://localhost:8080",
-      "https://mahadyuta-technical-solutions.vercel.app/", // replace with actual Vercel domain
-    ],
+      "https://mahadyuta-technical-solutions.vercel.app"
+    ], // IMPORTANT: no trailing slash
     methods: ["GET", "POST"],
     credentials: true,
   })
-); 
+);
 
 app.use(express.json());
 
 /* =========================================================
-   Mail Transporter
+   Mail Transporter (Production Safe Version)
 ========================================================= */
 const transporter = nodemailer.createTransport({
-  service: "gmail",
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -91,9 +101,22 @@ const transporter = nodemailer.createTransport({
 });
 
 /* =========================================================
-   API Route
+   Verify Mail Transporter
+========================================================= */
+transporter.verify((error, success) => {
+  if (error) {
+    console.error("Mail Transporter Error:", error);
+  } else {
+    console.log("Mail Server Ready");
+  }
+});
+
+/* =========================================================
+   Contact Form API
 ========================================================= */
 app.post("/send-email", async (req, res) => {
+  console.log("Incoming Request Body:", req.body);
+
   const {
     name,
     email,
@@ -118,27 +141,30 @@ app.post("/send-email", async (req, res) => {
       subject: subject || "New Contact Enquiry",
       replyTo: email,
       html: `
-        <h3>New Contact Form Submission</h3>
+        <h2>New Contact Form Submission</h2>
 
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone || "-"}</p>
-        <p><b>Company:</b> ${company || "-"}</p>
-        <p><b>Subject:</b> ${subject || "-"}</p>
-        <p><b>Message:</b><br/>${message}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "-"}</p>
+        <p><strong>Company:</strong> ${company || "-"}</p>
+        <p><strong>Subject:</strong> ${subject || "-"}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
       `,
     });
 
+    console.log("Email Sent Successfully");
+
     return res.status(200).json({
       success: true,
-      message: "Email sent successfully",
+      message: "Email sent successfully.",
     });
+
   } catch (error) {
     console.error("Email Sending Error:", error);
 
     return res.status(500).json({
       success: false,
-      message: "Failed to send email. Please try again.",
+      message: error.message || "Failed to send email.",
     });
   }
 });
