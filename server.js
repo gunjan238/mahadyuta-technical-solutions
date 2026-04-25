@@ -136,8 +136,8 @@ app.post("/send-email", async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: `"${name}" <${process.env.EMAIL_USER}>`,
-      to: "gunjankothari29@gmail.com",
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: subject || "New Contact Enquiry",
       replyTo: email,
       html: `
@@ -161,10 +161,11 @@ app.post("/send-email", async (req, res) => {
 
   } catch (error) {
     console.error("Email Sending Error:", error);
+    console.error("FULL EMAIL ERROR:", JSON.stringify(error, null, 2));
 
     return res.status(500).json({
       success: false,
-      message: error.message || "Failed to send email.",
+      message: error.response?.message || error.message || "Failed to send email.",
     });
   }
 });
