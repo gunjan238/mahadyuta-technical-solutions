@@ -11,7 +11,21 @@ import endoscopyInsp from "@/assets/endoscopy-1.jpeg";
 import siteAssessment from "@/assets/SiteAssessment.png";
 import probe from "@/assets/probe.jpeg";
 import visualInspect from "@/assets/visualInspection.jpg";
-
+import gearbox from "@/assets/gearbox.webp";
+import pipeline from "@/assets/pipeline.jpeg";
+import motor from "@/assets/motorDriver.jpg";
+import engine from "@/assets/engine.jpg";
+import pressureVessel from "@/assets/pressureVessel.jpg";
+import turbine from "@/assets/turbine.jpg";
+import heatExchanger from "@/assets/heatExchange.jpg";
+import boiler from "@/assets/boiler.jpg";
+import storage from "@/assets/storageTanks.jpg";
+import weld from "@/assets/weldInspection.jpg";
+import wear from "@/assets/wearAbrasion.jpg";
+import corrosion from "@/assets/corosion.jpg";
+import cracks from "@/assets/crack.webp";
+import blocks from "@/assets/blockage.jpg";
+import weldDefect from "@/assets/weldDefect.jpg";
 
 
 
@@ -105,25 +119,25 @@ const processSteps = [
 
 /* ── Applications with Unsplash photos ── */
 const applications = [
-  { label: "Gearboxes",         photo: "https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?w=400&q=80", alt: "Industrial gearbox" },
-  { label: "Pipelines",         photo: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&q=80", alt: "Industrial pipeline" },
-  { label: "Motors & Drives",   photo: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&q=80", alt: "Electric motor" },
-  { label: "Engines",           photo: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=400&q=80", alt: "Industrial engine" },
-  { label: "Pressure Vessels",  photo: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=400&q=80", alt: "Pressure vessel tank" },
-  { label: "Turbines",          photo: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&q=80", alt: "Wind turbine blades" },
-  { label: "Heat Exchangers",   photo: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80", alt: "Heat exchanger" },
-  { label: "Industrial Boilers",photo: "https://images.unsplash.com/photo-1548407260-da850faa41e3?w=400&q=80", alt: "Industrial boiler" },
-  { label: "Storage Tanks",     photo: "https://images.unsplash.com/photo-1578319439584-104c94d37305?w=400&q=80", alt: "Storage tank facility" },
-  { label: "Weld Inspection",   photo: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&q=80", alt: "Weld inspection process" },
+  { label: "Gearboxes",         photo: gearbox, alt: "Industrial gearbox" },
+  { label: "Pipelines",         photo: pipeline, alt: "Industrial pipeline" },
+  { label: "Motors & Drives",   photo: motor, alt: "Electric motor" },
+  { label: "Engines",           photo: engine, alt: "Industrial engine" },
+  { label: "Pressure Vessels",  photo: pressureVessel, alt: "Pressure vessel tank" },
+  { label: "Turbines",          photo: turbine, alt: "Wind turbine blades" },
+  { label: "Heat Exchangers",   photo: heatExchanger, alt: "Heat exchanger" },
+  { label: "Industrial Boilers",photo: boiler, alt: "Industrial boiler" },
+  { label: "Storage Tanks",     photo: storage, alt: "Storage tank facility" },
+  { label: "Weld Inspection",   photo: weld, alt: "Weld inspection process" },
 ];
 
 /* ── Defect types ── */
 const defects = [
-  { color: "#ef4444", label: "Wear & Abrasion",    desc: "Surface degradation from friction",   photo: "https://images.unsplash.com/photo-1590585659793-64b6b6b34c24?w=400&q=80" },
-  { color: "#f97316", label: "Corrosion & Rust",   desc: "Oxidation and chemical deterioration", photo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" },
-  { color: "#eab308", label: "Cracks & Fractures", desc: "Structural integrity failures",         photo: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=80" },
-  { color: "#3b82f6", label: "Blockages & Deposits",desc: "Flow restriction and buildup",         photo: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400&q=80" },
-  { color: "#22c55e", label: "Weld Defects",        desc: "Porosity, undercut, incomplete fusion", photo: "https://images.unsplash.com/photo-1565514158740-064f34bd6cfd?w=400&q=80" },
+  { color: "#ef4444", label: "Wear & Abrasion",    desc: "Surface degradation from friction",   photo: wear },
+  { color: "#f97316", label: "Corrosion & Rust",   desc: "Oxidation and chemical deterioration", photo: corrosion },
+  { color: "#eab308", label: "Cracks & Fractures", desc: "Structural integrity failures",         photo: cracks },
+  { color: "#3b82f6", label: "Blockages & Deposits",desc: "Flow restriction and buildup",         photo: blocks },
+  { color: "#22c55e", label: "Weld Defects",        desc: "Porosity, undercut, incomplete fusion", photo: weldDefect },
 ];
 
 /* ═══════════════════════════════════════════════════════════
