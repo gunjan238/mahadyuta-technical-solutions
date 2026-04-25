@@ -239,7 +239,7 @@ const Contact = () => {
     setSending(true);
 
     try {
-      const res = await fetch("https://mahadyuta-technical-solutions.onrender.com/send-email", {
+      const res = await fetch("https://mahadyuta-technical-solutions-pvl8.onrender.com/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

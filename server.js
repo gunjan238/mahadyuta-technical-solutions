@@ -75,7 +75,7 @@ app.use(
     methods: ["GET", "POST"],
     credentials: true,
   })
-);
+); 
 
 app.use(express.json());
 
