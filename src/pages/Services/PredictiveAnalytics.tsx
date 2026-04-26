@@ -9,7 +9,7 @@ const ACCENT2 = "#f97316";
 const TAGLINE = "SEE FAILURES BEFORE THEY HAPPEN.";
 const TITLE = "Predictive Analytics";
 const SUBTITLE =
-  "Identify equipment faults weeks before they escalate into costly breakdowns — using multi-technology condition monitoring across electrical, mechanical, and structural assets.";
+  "Identify equipment faults weeks before they escalate into major machine breakdowns — using multi-technology condition monitoring across electrical, mechanical, and structural assets.";
 
 const SERVICES = [
   {
