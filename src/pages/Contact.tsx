@@ -227,38 +227,70 @@ const Contact = () => {
   };
 
   /* Submit — sends to Nodemailer backend */
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setSuccess(false);
+  /* Updated handleSubmit function with fixes
+   Replace only your existing handleSubmit function
+   Current Contact component is from uploaded file :contentReference[oaicite:0]{index=0}
+*/
 
-    if (!form.name || !form.email || !form.message) {
-      toast({ title: "Missing Fields", description: "Please fill all required fields." });
-      return;
-    }
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setSuccess(false);
 
-    setSending(true);
+  /* Required field validation */
+  if (!form.name || !form.email || !form.message) {
+    toast({
+      title: "Missing Fields",
+      description: "Please fill all required fields.",
+    });
+    return;
+  }
 
-    try {
-      const res = await fetch("https://mahadyuta-technical-solutions-xg9p.onrender.com/send-email", {
+  setSending(true);
+
+  try {
+    const response = await fetch(
+      "https://mahadyuta-technical-solutions-xg9p.onrender.com/send-email",
+      {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(form),
-      });
-      const data = await res.json();
+      }
+    );
 
-      if (!res.ok || !data.success) throw new Error("Failed");
+    /* Safe response handling */
+    const data = await response.json();
 
-      toast({ title: "Enquiry Submitted ✓", description: "We'll contact you shortly." });
-      setForm(initialForm);
-      setSuccess(true);
-
-    } catch (err) {
-      console.error(err);
-      toast({ title: "Error", description: "Failed to send. Please try again." });
+    if (!response.ok || !data.success) {
+      throw new Error(
+        data.message || "Failed to send enquiry"
+      );
     }
 
+    /* Success */
+    toast({
+      title: "Enquiry Submitted ✓",
+      description:
+        "Your message has been sent successfully. We’ll contact you shortly.",
+    });
+
+    setForm(initialForm);
+    setSuccess(true);
+
+  } catch (error: any) {
+    console.error("Form Submission Error:", error);
+
+    toast({
+      title: "Submission Failed",
+      description:
+        error.message ||
+        "Unable to send your enquiry. Please try again later.",
+    });
+  } finally {
     setSending(false);
-  };
+  }
+};
 
   return (
     <div className="ct-page">

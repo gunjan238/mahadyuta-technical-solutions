@@ -53,7 +53,6 @@
 
 
 // server.js
-// server.js
 
 import express from "express";
 import nodemailer from "nodemailer";
@@ -65,35 +64,50 @@ dotenv.config();
 const app = express();
 
 /* =========================================================
-   Health Check Route (Recommended for Render)
+   Health Check Route
 ========================================================= */
 app.get("/", (req, res) => {
-  res.send("Backend Running Successfully");
+  res.status(200).send("Backend Running Successfully");
 });
 
 /* =========================================================
-   Middleware
+   CORS Configuration (Fixed for Vercel + Render)
 ========================================================= */
+const allowedOrigins = [
+  "http://localhost:8080",
+  "https://mahadyuta-technical-solutions.vercel.app",
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:8080",
-      "https://mahadyuta-technical-solutions.vercel.app"
-    ], // IMPORTANT: no trailing slash
-    methods: ["GET", "POST"],
+    origin: function (origin, callback) {
+      // Allow requests with no origin (Postman, mobile apps, etc.)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        console.error("Blocked by CORS:", origin);
+        return callback(new Error("CORS not allowed"));
+      }
+    },
+    methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
   })
 );
 
+/* Handle preflight requests */
+app.options("*", cors());
+
 app.use(express.json());
 
 /* =========================================================
-   Mail Transporter (Production Safe Version)
+   Mail Transporter (Hostinger SMTP)
 ========================================================= */
 const transporter = nodemailer.createTransport({
   host: "smtp.hostinger.com",
   port: 465,
-  secure: true,
+  secure: true, // true for 465
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
@@ -126,7 +140,7 @@ app.post("/send-email", async (req, res) => {
     message,
   } = req.body;
 
-  /* Required field validation */
+  /* Required Field Validation */
   if (!name || !email || !message) {
     return res.status(400).json({
       success: false,
@@ -136,7 +150,7 @@ app.post("/send-email", async (req, res) => {
 
   try {
     await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+      from: `"Website Enquiry" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
       subject: subject || "New Contact Enquiry",
       replyTo: email,
@@ -158,14 +172,19 @@ app.post("/send-email", async (req, res) => {
       success: true,
       message: "Email sent successfully.",
     });
-
   } catch (error) {
     console.error("Email Sending Error:", error);
-    console.error("FULL EMAIL ERROR:", JSON.stringify(error, null, 2));
+    console.error(
+      "FULL EMAIL ERROR:",
+      JSON.stringify(error, null, 2)
+    );
 
     return res.status(500).json({
       success: false,
-      message: error.response?.message || error.message || "Failed to send email.",
+      message:
+        error.response?.message ||
+        error.message ||
+        "Failed to send email.",
     });
   }
 });
