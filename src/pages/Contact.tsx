@@ -278,6 +278,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     setForm(initialForm);
     setSuccess(true);
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     console.error("Form Submission Error:", error);
 
