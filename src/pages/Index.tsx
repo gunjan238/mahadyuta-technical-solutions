@@ -338,7 +338,7 @@ export default function Index() {
 
           {/* ✅ ONLY CHANGE: py-20 lg:py-28  →  pt-[78px] pb-16 lg:pt-[86px] lg:pb-20
               pt-[78px] = 72px fixed header height + 6px gap — eliminates the void entirely */}
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-[78px] pb-16 lg:pt-[86px] lg:pb-20">
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-[60px] pb-16 lg:pt-[68px] lg:pb-20">
             <div className="grid lg:grid-cols-2 gap-12 md:gap-16 items-center">
 
               {/* LEFT */}

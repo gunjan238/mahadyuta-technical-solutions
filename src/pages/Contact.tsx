@@ -435,7 +435,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               </div>
               <h2 style={{ fontSize: 20, fontWeight: 700, color: "#0f1117", marginBottom: 4 }}>Reach Us Directly</h2>
               <p style={{ fontSize: 13.5, color: "#64748b", lineHeight: 1.6 }}>
-                Available Monday–Saturday, 9 AM–6 PM IST.
+                Available Monday–Saturday, 9:30 AM–6 PM IST.
               </p>
             </div>
 
@@ -502,7 +502,7 @@ const handleSubmit = async (e: React.FormEvent) => {
           <div className="ct-map">
             <iframe
               title="Mahadyuta Technical Solutions Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.0!2d73.07!3d18.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDU4JzEyLjAiTiA3M8KwMDQnMTIuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d471.0!2d73.1156337!3d19.0594829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7eb922d2fd1dd%3A0xcb2819b75b4b542c!2sMahadyuta%20Technical%20Solutions%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1700000000000"
               width="100%" height="380"
               style={{ display: "block", border: 0 }}
               allowFullScreen loading="lazy"

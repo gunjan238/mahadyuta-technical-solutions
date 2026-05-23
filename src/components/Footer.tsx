@@ -2,7 +2,6 @@
 // import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 // import logo from "@/assets/logo.png";
 
-// // LinkedIn SVG icon component
 // const LinkedInIcon = () => (
 //   <svg
 //     width="16"
@@ -20,6 +19,23 @@
 //   </svg>
 // );
 
+// /* Reusable contact row — icon pinned to top, content beside it */
+// const ContactRow = ({
+//   icon,
+//   children,
+// }: {
+//   icon: React.ReactNode;
+//   children: React.ReactNode;
+// }) => (
+//   <li className="flex items-start gap-3">
+//     {/* Icon wrapper: fixed width + top-aligned so it sits level with the first line of text */}
+//     <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mt-[2px]">
+//       {icon}
+//     </span>
+//     <div className="text-sm text-slate-500 leading-relaxed">{children}</div>
+//   </li>
+// );
+
 // const Footer = () => (
 //   <footer
 //     className="relative overflow-hidden"
@@ -31,8 +47,7 @@
 //     <div
 //       className="absolute inset-0 opacity-[0.07]"
 //       style={{
-//         backgroundImage:
-//           "radial-gradient(circle at 1px 1px, #f59e0b 1px, transparent 0)",
+//         backgroundImage: "radial-gradient(circle at 1px 1px, #f59e0b 1px, transparent 0)",
 //         backgroundSize: "40px 40px",
 //       }}
 //     />
@@ -41,8 +56,7 @@
 //     <div
 //       className="absolute top-0 left-0 w-[50vw] h-[50vw] pointer-events-none"
 //       style={{
-//         background:
-//           "radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 65%)",
+//         background: "radial-gradient(circle, rgba(251,191,36,0.15) 0%, transparent 65%)",
 //         borderRadius: "50%",
 //         transform: "translate(-25%, -25%)",
 //       }}
@@ -61,20 +75,11 @@
 
 //         {/* ── Brand ── */}
 //         <div className="lg:col-span-1">
-//           {/*
-//             LOGO FIX: Ensure you export/save your logo as a PNG with a
-//             transparent background (no white fill). In most design tools:
-//               - Figma: File → Export → PNG (toggle off background)
-//               - Illustrator: File → Export for Screens → PNG, uncheck "White Background"
-//               - Photoshop: File → Export → Export As → PNG, ensure no background layer
-//             The `mix-blend-mode: multiply` below also helps on light backgrounds
-//             if a fully transparent export isn't immediately available.
-//           */}
 //           <img
 //             src={logo}
 //             alt="Mahadyuta"
 //             className="h-10 w-auto mb-5"
-//             style={{ mixBlendMode: "multiply" }} // removes white bg on light backgrounds
+//             style={{ mixBlendMode: "multiply" }}
 //           />
 //           <p className="text-sm text-slate-500 leading-relaxed">
 //             We add value by improving the reliability of industrial machinery and
@@ -137,87 +142,78 @@
 //           >
 //             Contact Us
 //           </h3>
+
 //           <ul className="space-y-4">
 
 //             {/* Address */}
-//             <li className="flex items-start gap-3 text-sm text-slate-500">
-//               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-amber-500" />
-//               <span className="leading-relaxed">
-//                 #B-429, Silver Springs, Taloja MIDC Road,<br />
-//                 M.I.D.C. Taloja, Taluka: Panvel,<br />
-//                 Navi Mumbai, Maharashtra – 410 208
-//               </span>
-//             </li>
+//             <ContactRow icon={<MapPin className="h-4 w-4 text-amber-500" />}>
+//               #B-429, Silver Springs,<br /> Taloja MIDC Road,<br />
+//               M.I.D.C. Taloja, Taluka: Panvel,<br />
+//               Navi Mumbai,<br /> Maharashtra – 410 208
+//             </ContactRow>
 
 //             {/* Office phones */}
-//             <li className="flex items-start gap-3 text-sm text-slate-500">
-//               <Phone className="h-4 w-4 mt-0.5 shrink-0 text-amber-500" />
-//               <span className="space-y-0.5">
-//                 <span className="block font-medium text-slate-600">Office</span>
-//                 <a href="tel:+918976684258" className="block hover:text-amber-600 transition-colors">
-//                   (+91) 8976684258
-//                 </a>
-//                 <a href="tel:02248018922" className="block hover:text-amber-600 transition-colors">
-//                   022 48018922
-//                 </a>
-//               </span>
-//             </li>
+//             <ContactRow icon={<Phone className="h-4 w-4 text-amber-500" />}>
+//               <span className="block font-medium text-slate-600 mb-0.5">Office</span>
+//               <a href="tel:+918976684258" className="block hover:text-amber-600 transition-colors">
+//                 (+91) 8976684258
+//               </a>
+//               <a href="tel:02248018922" className="block hover:text-amber-600 transition-colors">
+//                 022 48018922
+//               </a>
+//             </ContactRow>
 
 //             {/* Regional offices */}
-//             <li className="flex items-start gap-3 text-sm text-slate-500">
-//               <Phone className="h-4 w-4 mt-0.5 shrink-0 text-amber-500" />
-//               <span className="space-y-0.5">
-//                 <span className="block font-medium text-slate-600">Regional</span>
-//                 <span className="flex items-center gap-1.5">
-//                   <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">VZG</span>
-//                   <a href="tel:+918179476459" className="hover:text-amber-600 transition-colors">
-//                     +91 8179476459
-//                   </a>
+//             <ContactRow icon={<Phone className="h-4 w-4 text-amber-500" />}>
+//               <span className="block font-medium text-slate-600 mb-0.5">Regional</span>
+//               <span className="flex items-center gap-1.5 mb-0.5">
+//                 <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium leading-none">
+//                   VZG
 //                 </span>
-//                 <span className="flex items-center gap-1.5">
-//                   <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium">KL</span>
-//                   <a href="tel:+919618647755" className="hover:text-amber-600 transition-colors">
-//                     +91 9618647755
-//                   </a>
-//                 </span>
+//                 <a href="tel:+918179476459" className="hover:text-amber-600 transition-colors">
+//                   +91 8179476459
+//                 </a>
 //               </span>
-//             </li>
+//               <span className="flex items-center gap-1.5">
+//                 <span className="text-xs bg-amber-100 text-amber-700 px-1.5 py-0.5 rounded font-medium leading-none">
+//                   KL
+//                 </span>
+//                 <a href="tel:+919618647755" className="hover:text-amber-600 transition-colors">
+//                   +91 9618647755
+//                 </a>
+//               </span>
+//             </ContactRow>
 
 //             {/* Email */}
-//             <li className="flex items-center gap-3 text-sm text-slate-500">
-//               <Mail className="h-4 w-4 shrink-0 text-amber-500" />
+//             <ContactRow icon={<Mail className="h-4 w-4 text-amber-500" />}>
 //               <a
 //                 href="mailto:info@mahadyuta.com"
 //                 className="hover:text-amber-600 transition-colors"
 //               >
 //                 info@mahadyuta.com
 //               </a>
-//             </li>
+//             </ContactRow>
 
-//             {/* LinkedIn — MTSPL */}
-//             <li className="flex items-start gap-3 text-sm text-slate-500">
-//               <LinkedInIcon />
-//               <span className="space-y-0.5">
-//                 <span className="block font-medium text-slate-600">LinkedIn</span>
-//                 <a
-//                   href="https://www.linkedin.com/company/mahadyuta-technical-solutions/"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="block hover:text-[#0077B5] transition-colors"
-//                 >
-//                   MTSPL – Mahadyuta Technical Solutions
-//                 </a>
-//                 {/* ── LinkedIn — MCEIR ── */}
-//                 <a
-//                   href="https://www.linkedin.com/company/mahadyuta-center-of-excellence-for-industrial-reliability/"
-//                   target="_blank"
-//                   rel="noopener noreferrer"
-//                   className="block hover:text-[#0077B5] transition-colors"
-//                 >
-//                   MCEIR – Centre of Excellence
-//                 </a>
-//               </span>
-//             </li>
+//             {/* LinkedIn */}
+//             <ContactRow icon={<LinkedInIcon />}>
+//               <span className="block font-medium text-slate-600 mb-0.5">LinkedIn</span>
+//               <a
+//                 href="https://www.linkedin.com/company/mahadyuta-technical-solutions/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="block hover:text-[#0077B5] transition-colors"
+//               >
+//                 MTSPL – Mahadyuta Technical Solutions
+//               </a>
+//               <a
+//                 href="https://www.linkedin.com/company/mahadyuta-center-of-excellence-for-industrial-reliability/"
+//                 target="_blank"
+//                 rel="noopener noreferrer"
+//                 className="block hover:text-[#0077B5] transition-colors"
+//               >
+//                 MCEIR – Centre of Excellence
+//               </a>
+//             </ContactRow>
 
 //           </ul>
 //         </div>
@@ -233,9 +229,14 @@
 //           <br className="md:hidden" />
 //           <span className="block md:inline md:ml-20">
 //             © Designed &amp; Developed by{" "}
-//             <span className="text-amber-600 font-medium hover:underline cursor-pointer">
+//             <a
+//               href="https://snapitt-studio.vercel.app/"
+//               target="_blank"
+//               rel="noopener noreferrer"
+//               className="text-amber-600 font-medium hover:underline cursor-pointer"
+//             >
 //               Snapit
-//             </span>
+//             </a>
 //           </span>
 //         </p>
 
@@ -256,10 +257,10 @@
 
 
 
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, ArrowUpRight } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { link } from "fs";
 
 const LinkedInIcon = () => (
   <svg
@@ -278,7 +279,6 @@ const LinkedInIcon = () => (
   </svg>
 );
 
-/* Reusable contact row — icon pinned to top, content beside it */
 const ContactRow = ({
   icon,
   children,
@@ -287,13 +287,22 @@ const ContactRow = ({
   children: React.ReactNode;
 }) => (
   <li className="flex items-start gap-3">
-    {/* Icon wrapper: fixed width + top-aligned so it sits level with the first line of text */}
     <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center mt-[2px]">
       {icon}
     </span>
     <div className="text-sm text-slate-500 leading-relaxed">{children}</div>
   </li>
 );
+
+const QUICK_LINKS = ["Home", "About", "Services", "Products", "Gallery", "Contact"];
+
+const SERVICES = [
+  { label: "Energy Optimization", link: "/services/energy-optimization" },
+  { label: "Predictive Analytics", link: "/services/predictive-analytics" },
+  { label: "IIoT-Based CBM", link: "/products/monitoring-systems" },
+  { label: "Training & Certification", link: "/center" },
+  { label: "Condition Monitoring", link: "/services/condition-monitoring" },
+];
 
 const Footer = () => (
   <footer
@@ -302,7 +311,7 @@ const Footer = () => (
       background: "linear-gradient(135deg, #fffbeb 0%, #fff7ed 40%, #f0f9ff 100%)",
     }}
   >
-    {/* Subtle warm dot grid */}
+    {/* Dot grid */}
     <div
       className="absolute inset-0 opacity-[0.07]"
       style={{
@@ -311,7 +320,7 @@ const Footer = () => (
       }}
     />
 
-    {/* Ambient sunburst glow — top left */}
+    {/* Sunburst glow */}
     <div
       className="absolute top-0 left-0 w-[50vw] h-[50vw] pointer-events-none"
       style={{
@@ -356,7 +365,7 @@ const Footer = () => (
             Quick Links
           </h3>
           <ul className="space-y-2.5">
-            {["Home", "About", "Services", "Products", "Gallery", "Contact"].map((l) => (
+            {QUICK_LINKS.map((l) => (
               <li key={l}>
                 <Link
                   to={`/${l === "Home" ? "" : l.toLowerCase()}`}
@@ -379,15 +388,15 @@ const Footer = () => (
             Services
           </h3>
           <ul className="space-y-2.5">
-            {[
-              "Energy Optimization",
-              "Predictive Analytics",
-              "IIoT-Based CBM",
-              "Training & Certification",
-              "Condition Monitoring",
-            ].map((s) => (
-              <li key={s} className="text-sm text-slate-500">
-                {s}
+            {SERVICES.map((s) => (
+              <li key={s.link}>
+                <Link
+                  to={s.link}
+                  className="text-sm text-slate-500 inline-flex items-center gap-1 group transition-colors hover:text-amber-600"
+                >
+                  {s.label}
+                  <ArrowUpRight className="h-3 w-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
               </li>
             ))}
           </ul>
@@ -404,14 +413,12 @@ const Footer = () => (
 
           <ul className="space-y-4">
 
-            {/* Address */}
             <ContactRow icon={<MapPin className="h-4 w-4 text-amber-500" />}>
               #B-429, Silver Springs,<br /> Taloja MIDC Road,<br />
               M.I.D.C. Taloja, Taluka: Panvel,<br />
               Navi Mumbai,<br /> Maharashtra – 410 208
             </ContactRow>
 
-            {/* Office phones */}
             <ContactRow icon={<Phone className="h-4 w-4 text-amber-500" />}>
               <span className="block font-medium text-slate-600 mb-0.5">Office</span>
               <a href="tel:+918976684258" className="block hover:text-amber-600 transition-colors">
@@ -422,7 +429,6 @@ const Footer = () => (
               </a>
             </ContactRow>
 
-            {/* Regional offices */}
             <ContactRow icon={<Phone className="h-4 w-4 text-amber-500" />}>
               <span className="block font-medium text-slate-600 mb-0.5">Regional</span>
               <span className="flex items-center gap-1.5 mb-0.5">
@@ -443,17 +449,12 @@ const Footer = () => (
               </span>
             </ContactRow>
 
-            {/* Email */}
             <ContactRow icon={<Mail className="h-4 w-4 text-amber-500" />}>
-              <a
-                href="mailto:info@mahadyuta.com"
-                className="hover:text-amber-600 transition-colors"
-              >
+              <a href="mailto:info@mahadyuta.com" className="hover:text-amber-600 transition-colors">
                 info@mahadyuta.com
               </a>
             </ContactRow>
 
-            {/* LinkedIn */}
             <ContactRow icon={<LinkedInIcon />}>
               <span className="block font-medium text-slate-600 mb-0.5">LinkedIn</span>
               <a
@@ -488,19 +489,31 @@ const Footer = () => (
           <br className="md:hidden" />
           <span className="block md:inline md:ml-20">
             © Designed &amp; Developed by{" "}
-            <span className="text-amber-600 font-medium hover:underline cursor-pointer">
+            <a
+              href="https://snapitt-studio.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-600 font-medium hover:underline cursor-pointer"
+            >
               Snapit
-            </span>
+            </a>
           </span>
         </p>
 
         <div className="flex gap-4 text-xs text-slate-400">
-          <span className="cursor-pointer hover:text-amber-600 transition-colors">
+          <a
+            href="/privacy-policy"
+            className="cursor-pointer hover:text-amber-600 transition-colors"
+          >
             Privacy Policy
-          </span>
-          <span className="cursor-pointer hover:text-amber-600 transition-colors">
+          </a>
+
+          <a
+            href="/terms-and-conditions"
+            className="cursor-pointer hover:text-amber-600 transition-colors"
+          >
             Terms of Service
-          </span>
+          </a>
         </div>
       </div>
     </div>

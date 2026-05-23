@@ -39,7 +39,7 @@ const InternationalPartnersSlider = () => {
               <img
                 src={partner.logo}
                 alt={partner.name}
-                className="h-24 object-contain mb-6"
+                className="h-25 object-contain mb-6"
               />
               <p className="text-blue-600 text-lg font-medium">
                 {partner.name}

@@ -1,42 +1,42 @@
-import { Toaster }                          from "@/components/ui/toaster";
-import { Toaster as Sonner }                from "@/components/ui/sonner";
-import { TooltipProvider }                  from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route }    from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
 
 /* ── Core pages ── */
-import Index    from "./pages/Index";
-import About    from "./pages/About";
+import Index from "./pages/Index";
+import About from "./pages/About";
 import Services from "./pages/Services";
 import Products from "./pages/Products";
-import Gallery  from "./pages/Gallery";
-import Contact  from "./pages/Contact";
+import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 /* ── Training — each dropdown section is its own page ── */
-import CentreOfExcellence  from "./pages/Training/CentreOfExcellence";
-import SkillDevelopment    from "./pages/Training/SkillDevelopment";
-import OneDayPrograms      from "./pages/Training/OneDayPrograms";
-import ThreeDayPrograms    from "./pages/Training/ThreeDayPrograms";
-import FiveDayPrograms     from "./pages/Training/FiveDayPrograms";
+import CentreOfExcellence from "./pages/Training/CentreOfExcellence";
+import SkillDevelopment from "./pages/Training/SkillDevelopment";
+import OneDayPrograms from "./pages/Training/OneDayPrograms";
+import ThreeDayPrograms from "./pages/Training/ThreeDayPrograms";
+import FiveDayPrograms from "./pages/Training/FiveDayPrograms";
 import CertificationCourses from "./pages/Training/CertificationCourses";
 
 /* ── Energy Optimization ── */
-import CompressedAir      from "./pages/Services/compressedAir";
+import CompressedAir from "./pages/Services/compressedAir";
 import HydraulicPneumatic from "./pages/Services/internalHydraulic";
-import SteamTrap          from "./pages/Services/steamTrapAudit";
-import AirWaterTight      from "./pages/Services/Airwatertight";
-import UndergroundLeak    from "./pages/Services/UndergroundLeak";
+import SteamTrap from "./pages/Services/steamTrapAudit";
+import AirWaterTight from "./pages/Services/Airwatertight";
+import UndergroundLeak from "./pages/Services/UndergroundLeak";
 import EnergyOptimization from "./pages/Services/EnergyOptimization";
 
 /* ── Predictive Analytics ── */
-import Partialdischargedetection  from "./pages/Services/Partialdischargedetection";
-import InfraredThermography       from "./pages/Services/InfraredThermography";
+import Partialdischargedetection from "./pages/Services/Partialdischargedetection";
+import InfraredThermography from "./pages/Services/InfraredThermography";
 import BearingConditionAssessment from "./pages/Services/Bearingconditionassessment";
-import Hullintegrityassessment    from "./pages/Services/Hullintegrityassessment";
-import Thermalmonitoring          from "./pages/Services/Thermalmonitoring";
+import Hullintegrityassessment from "./pages/Services/Hullintegrityassessment";
+import Thermalmonitoring from "./pages/Services/Thermalmonitoring";
 import PredictiveAnalytics from "./pages/Services/PredictiveAnalytics";
 
 /* ── IT Services ── */
@@ -58,7 +58,9 @@ import AdvancedThermalHotspotMonitoring from "./pages/Products/AdvancedThermalMo
 import IndustrialEndoscopy from "./pages/Services/IndustrialEndoscopy";
 import EnIndustrialEndoscopy from "./pages/Services/IndustrialEndoscopy";
 
-
+// Terms and Privacy Policy
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy      from "./pages/PrivacyPolicy";
 
 
 const queryClient = new QueryClient();
@@ -69,42 +71,42 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-      <ScrollToTop />
+        <ScrollToTop />
         <Layout>
           <Routes>
 
             {/* ── Core ── */}
-            <Route path="/"         element={<Index    />} />
-            <Route path="/about"    element={<About    />} />
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/gallery"  element={<Gallery  />} />
-            <Route path="/contact"  element={<Contact  />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
 
             {/* ── Training — each section is its own dedicated page ── */}
-            
-            <Route path="/centre"             element={<CentreOfExcellence   />} />
-            <Route path="/skill-programs"     element={<SkillDevelopment     />} />
-            <Route path="/one-day"            element={<OneDayPrograms       />} />
-            <Route path="/three-day"          element={<ThreeDayPrograms     />} />
-            <Route path="/five-day"           element={<FiveDayPrograms      />} />
-            <Route path="/certification"      element={<CertificationCourses />} />
+
+            <Route path="/centre" element={<CentreOfExcellence />} />
+            <Route path="/skill-programs" element={<SkillDevelopment />} />
+            <Route path="/one-day" element={<OneDayPrograms />} />
+            <Route path="/three-day" element={<ThreeDayPrograms />} />
+            <Route path="/five-day" element={<FiveDayPrograms />} />
+            <Route path="/certification" element={<CertificationCourses />} />
 
             {/* ── Energy Optimization ── */}
             <Route path="/services/energy-optimization" element={<EnergyOptimization />} />
-            <Route path="/services/compressed-air"      element={<CompressedAir      />} />
+            <Route path="/services/compressed-air" element={<CompressedAir />} />
             <Route path="/services/hydraulic-pneumatic" element={<HydraulicPneumatic />} />
-            <Route path="/services/steam-trap"          element={<SteamTrap          />} />
-            <Route path="/services/air-water-tight"     element={<AirWaterTight      />} />
-            <Route path="/services/underground-leak"    element={<UndergroundLeak    />} />
+            <Route path="/services/steam-trap" element={<SteamTrap />} />
+            <Route path="/services/air-water-tight" element={<AirWaterTight />} />
+            <Route path="/services/underground-leak" element={<UndergroundLeak />} />
 
             {/* ── Predictive Analytics ── */}
             <Route path="/services/predictive-analytics" element={<PredictiveAnalytics />} />
-            <Route path="/services/partial-discharge"     element={<Partialdischargedetection  />} />
-            <Route path="/services/infrared-thermography" element={<InfraredThermography       />} />
-            <Route path="/services/bearing-inspection"    element={<BearingConditionAssessment />} />
-            <Route path="/services/hull-integrity"        element={<Hullintegrityassessment    />} />
-            <Route path="/services/thermal-monitoring"    element={<Thermalmonitoring          />} />
+            <Route path="/services/partial-discharge" element={<Partialdischargedetection />} />
+            <Route path="/services/infrared-thermography" element={<InfraredThermography />} />
+            <Route path="/services/bearing-inspection" element={<BearingConditionAssessment />} />
+            <Route path="/services/hull-integrity" element={<Hullintegrityassessment />} />
+            <Route path="/services/thermal-monitoring" element={<Thermalmonitoring />} />
             <Route path="/services/lubrication-management" element={<LubricationManagement />} />
             <Route path="/services/vibration-monitoring" element={<VibrationMonitoring />} />
 
@@ -125,7 +127,11 @@ const App = () => (
             <Route path="/products/automated-thermal-monitoring" element={<Thermalmonitoringautomationproduct />} />
             <Route path="/products/thermal-cameras" element={<ThermalCamerasProduct />} />
             <Route path="/products/thermal-hotspot-monitoring" element={<AdvancedThermalHotspotMonitoring />} />
-            
+
+            // Terms Privacy Policy
+            <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+
           </Routes>
         </Layout>
       </BrowserRouter>
