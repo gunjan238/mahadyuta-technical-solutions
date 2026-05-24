@@ -13,10 +13,10 @@
 import { motion } from "framer-motion";
 
 /* ── Direct ES-module imports — Vite handles hashing & bundling ── */
-import logo3  from "@/assets/3.png";
-import logo5  from "@/assets/5.png";
-import logo7  from "@/assets/7.png";
-import logo9  from "@/assets/9.png";
+import logo3 from "@/assets/3.png";
+import logo5 from "@/assets/5.png";
+import logo7 from "@/assets/7.png";
+import logo9 from "@/assets/9.png";
 import logo10 from "@/assets/10.png";
 import logo11 from "@/assets/11.png";
 import logo14 from "@/assets/14.png";
@@ -27,24 +27,45 @@ import logo18 from "@/assets/18.png";
 import logo19 from "@/assets/19.png";
 import logo20 from "@/assets/20.png";
 import logo21 from "@/assets/21.png";
+import logo22 from "@/assets/22.png";
+import logo24 from "@/assets/24.png";
+import logo25 from "@/assets/25.png";
+import logo26 from "@/assets/26.png";
+import logo27 from "@/assets/27.png";
+import logo28 from "@/assets/28.png";
+import logo29 from "@/assets/29.png";
+import logo30 from "@/assets/30.png";
+import cipla from "@/assets/cipla.png";
+import dpworld from "@/assets/dpworld.png";
+
 import logoTataPower from "@/assets/TataPower.png";
 
 const logos: { src: string; alt: string }[] = [
-  { src: logo3,         alt: "JSW Steel"        },
-  { src: logo5,         alt: "Tata Motors"      },
-  { src: logo7,         alt: "IFFCO"            },
-  { src: logo9,         alt: "Mahindra"         },
-  { src: logo10,        alt: "DCM Shriram"      },
-  { src: logo11,        alt: "Ador Welding"     },
-  { src: logo14,        alt: "IndianOil LNG"    },
-  { src: logo15,        alt: "Oetiker"          },
-  { src: logo16,        alt: "ERDA"             },
-  { src: logo17,        alt: "MPPTCL"           },
-  { src: logo18,        alt: "ACME"             },
-  { src: logo19,        alt: "Alembic"          },
-  { src: logo20,        alt: "Temple Packaging" },
-  { src: logoTataPower, alt: "Tata Power"       },
-  { src: logo21,        alt: "Sun Pharma"       },
+  { src: logo3, alt: "JSW Steel" },
+  { src: logo5, alt: "Tata Motors" },
+  { src: logo7, alt: "IFFCO" },
+  { src: logo9, alt: "Mahindra" },
+  { src: logo10, alt: "DCM Shriram" },
+  { src: logo11, alt: "Ador Welding" },
+  { src: logo14, alt: "IndianOil LNG" },
+  { src: logo15, alt: "Oetiker" },
+  { src: logo16, alt: "ERDA" },
+  { src: logo17, alt: "MPPTCL" },
+  { src: logo18, alt: "ACME" },
+  { src: logo19, alt: "Alembic" },
+  { src: logo20, alt: "Temple Packaging" },
+  { src: logoTataPower, alt: "Tata Power" },
+  { src: logo21, alt: "Sun Pharma" },
+  { src: logo22, alt: "Larsen & Toubro" },
+  { src: logo24, alt: "Bharat Petroleum" },
+  { src: logo25, alt: "Hindustan Zinc" },
+  { src: logo26, alt: "Hindustan Unilever" },
+  { src: logo27, alt: "Cipla" },
+  { src: logo28, alt: "DPCL" },
+  { src: logo29, alt: "BASF" },
+  { src: logo30, alt: "Gujarat Gas" },
+  { src: cipla, alt: "Cipla" },
+  { src: dpworld, alt: "DP World" },
 ];
 
 /* Duplicate rows for a seamless infinite loop */
@@ -97,7 +118,7 @@ const LogoCard = ({ src, alt }: { src: string; alt: string }) => (
 );
 
 const fadeUp = {
-  hidden:  { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.65 } },
 };
 
