@@ -13,32 +13,43 @@
 import { motion } from "framer-motion";
 
 /* ── Direct ES-module imports — Vite handles hashing & bundling ── */
-import logo3 from "@/assets/3.png";
-import logo5 from "@/assets/5.png";
-import logo7 from "@/assets/7.png";
-import logo9 from "@/assets/9.png";
-import logo10 from "@/assets/10.png";
-import logo11 from "@/assets/11.png";
-import logo14 from "@/assets/14.png";
-import logo15 from "@/assets/15.png";
-import logo16 from "@/assets/16.png";
-import logo17 from "@/assets/17.png";
-import logo18 from "@/assets/18.png";
-import logo19 from "@/assets/19.png";
-import logo20 from "@/assets/20.png";
-import logo21 from "@/assets/21.png";
-import logo22 from "@/assets/22.png";
-import logo24 from "@/assets/24.png";
-import logo25 from "@/assets/25.png";
-import logo26 from "@/assets/26.png";
-import logo27 from "@/assets/27.png";
-import logo28 from "@/assets/28.png";
-import logo29 from "@/assets/29.png";
-import logo30 from "@/assets/30.png";
-import cipla from "@/assets/cipla.png";
-import dpworld from "@/assets/dpworld.png";
+import logo3 from "@/assets/customers/3.png";
+import logo5 from "@/assets/customers/5.png";
+import logo7 from "@/assets/customers/7.png";
+import logo9 from "@/assets/customers/9.png";
+import logo10 from "@/assets/customers/10.png";
+import logo11 from "@/assets/customers/11.png";
+import logo14 from "@/assets/customers/14.png";
+import logo15 from "@/assets/customers/15.png";
+import logo16 from "@/assets/customers/16.png";
+import logo17 from "@/assets/customers/17.png";
+import logo18 from "@/assets/customers/18.png";
+import logo19 from "@/assets/customers/19.png";
+import logo20 from "@/assets/customers/20.png";
+import logo21 from "@/assets/customers/21.png";
+import logo22 from "@/assets/customers/22.png";
+import logo24 from "@/assets/customers/24.png";
+import logo25 from "@/assets/customers/25.png";
+import logo26 from "@/assets/customers/26.png";
+import logo27 from "@/assets/customers/27.png";
+import logo28 from "@/assets/customers/28.png";
+import logo29 from "@/assets/customers/29.png";
+import logo30 from "@/assets/customers/30.png";
+import logo31 from "@/assets/customers/31.jpg";
+import logo32 from "@/assets/customers/32.jpg";
+import logo33 from "@/assets/customers/33.jpg";
+import logo34 from "@/assets/customers/34.jpg";
+import logo35 from "@/assets/customers/35.jpg";
+import logo36 from "@/assets/customers/36.jpg";
+import logo37 from "@/assets/customers/37.jpg";
+import logo38 from "@/assets/customers/38.jpg";
+import logo39 from "@/assets/customers/39.jpg";
+import logo40 from "@/assets/customers/40.jpg";
 
-import logoTataPower from "@/assets/TataPower.png";
+import cipla from "@/assets/customers/cipla.png";
+import dpworld from "@/assets/customers/dpworld.png";
+
+import logoTataPower from "@/assets/customers/TataPower.png";
 
 const logos: { src: string; alt: string }[] = [
   { src: logo3, alt: "JSW Steel" },
@@ -64,6 +75,16 @@ const logos: { src: string; alt: string }[] = [
   { src: logo28, alt: "DPCL" },
   { src: logo29, alt: "BASF" },
   { src: logo30, alt: "Gujarat Gas" },
+  { src: logo31, alt: "Amara" },
+  { src: logo32, alt: "Sanzyme" },
+  { src: logo33, alt: "Finorchem" },
+  { src: logo34, alt: "Intas" },
+  { src: logo35, alt: "apollo" },
+  { src: logo36, alt: "jindal power" },
+  { src: logo37, alt: "jindal steel" },
+  { src: logo38, alt: "shyam metallics" },
+  { src: logo39, alt: "hindalco" },
+  { src: logo40, alt: "linde" },
   { src: cipla, alt: "Cipla" },
   { src: dpworld, alt: "DP World" },
 ];
