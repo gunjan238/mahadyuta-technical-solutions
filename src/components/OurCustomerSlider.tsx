@@ -145,9 +145,7 @@ const OurCustomersSlider = () => (
         Our Valued Customers
       </h2>
       <p className="text-slate-500 text-sm mt-3 max-w-lg mx-auto">
-        Proudly serving industry leaders across power, pharma, steel,
-        automotive, and process sectors.
-      </p>
+        We are proudly serving several leading industries from Aluminium, Steel, Power, Pharma, Automotive, Port, Defence, etc.    </p>
     </motion.div>
 
     {/* Row 1 — left */}

@@ -1375,12 +1375,12 @@ export default function AdvancedThermalHotspotMonitoring() {
               <span style={{ fontSize:12, color:"#334155", fontWeight:500 }}>Thermal Cameras & Monitoring</span>
             </div>
 
-            <div className="ath-badge"><Thermometer size={11}/> Infrared Thermography & Automation</div>
+            <div className="ath-badge"><Thermometer size={11}/> Infrared Thermal Monitoring</div>
 
             <h1 style={{ fontSize:"clamp(26px,4.5vw,54px)", fontWeight:900, color:"#1e293b", lineHeight:1.05 }}>
-              Thermal Cameras &amp;{" "}
+              Infrared {" "}
               <span style={{ background:"linear-gradient(90deg,#f59e0b 0%,#ea580c 60%,#f59e0b 100%)", WebkitBackgroundClip:"text", WebkitTextFillColor:"transparent", backgroundClip:"text" }}>
-                Monitoring Solutions
+                Thermal Cameras
               </span>
             </h1>
 

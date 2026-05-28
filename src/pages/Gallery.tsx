@@ -6,15 +6,46 @@ import { Link } from "react-router-dom";
 import { X, ChevronLeft, ChevronRight, Images } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
-import mh1 from "@/assets/mh1.jpeg";
-import g1 from "@/assets/gallery1.jpg";
-import g2 from "@/assets/gallery2.jpg";
-import g3 from "@/assets/gallery3.jpg";
-import g4 from "@/assets/gallery4.jpg";
-import g5 from "@/assets/gallery5.jpg";
-import g6 from "@/assets/gallery6.jpg";
-import g7 from "@/assets/gallery7.jpg";
-import g8 from "@/assets/gallery8.jpg";
+import mh1 from "@/assets/gallery/mh1.jpeg";
+import g1 from "@/assets/gallery/gallery1.jpg";
+import g2 from "@/assets/gallery/gallery2.jpg";
+import g3 from "@/assets/gallery/gallery3.jpg";
+import g4 from "@/assets/gallery/gallery4.jpg";
+import g5 from "@/assets/gallery/gallery5.jpg";
+import g6 from "@/assets/gallery/gallery6.jpg";
+import g7 from "@/assets/gallery/gallery7.jpg";
+import g8 from "@/assets/gallery/gallery8.jpg";
+import g9 from "@/assets/gallery/gallery9.png";
+import g10 from "@/assets/gallery/gallery10.jpg";
+import g11 from "@/assets/gallery/gallery11.png";
+import g12 from "@/assets/gallery/gallery12.jpg";
+import g13 from "@/assets/gallery/gallery13.jpg";
+import g14 from "@/assets/gallery/gallery14.jpeg";
+import g15 from "@/assets/gallery/gallery15.jpeg";
+import g16 from "@/assets/gallery/gallery16.jpeg";
+import g17 from "@/assets/gallery/gallery17.jpeg";
+import g18 from "@/assets/gallery/gallery18.jpeg";
+import g19 from "@/assets/gallery/gallery19.jpeg";
+import g20 from "@/assets/gallery/gallery20.jpeg";
+import g21 from "@/assets/gallery/gallery21.jpeg";
+import g22 from "@/assets/gallery/gallery22.jpeg";
+import g23 from "@/assets/gallery/gallery23.jpeg";
+import g24 from "@/assets/gallery/gallery24.jpeg";
+import g25 from "@/assets/gallery/gallery25.jpeg";
+import g26 from "@/assets/gallery/gallery26.jpeg";
+import g27 from "@/assets/gallery/gallery27.jpeg";
+import g28 from "@/assets/gallery/gallery28.jpeg";
+import g29 from "@/assets/gallery/gallery29.jpeg";
+import g30 from "@/assets/gallery/gallery30.jpeg";
+import g31 from "@/assets/gallery/gallery31.jpeg";
+import g32 from "@/assets/gallery/gallery32.jpeg";
+import g33 from "@/assets/gallery/gallery33.jpeg";
+import g34 from "@/assets/gallery/gallery34.jpeg";
+import g35 from "@/assets/gallery/gallery35.jpeg";
+import g36 from "@/assets/gallery/gallery36.jpeg";
+import g37 from "@/assets/gallery/gallery37.jpeg";
+import g38 from "@/assets/gallery/gallery38.jpeg";
+
 
 const galleryImages = [
   { src: mh1 },
@@ -26,6 +57,37 @@ const galleryImages = [
   { src: g6 },
   { src: g7 },
   { src: g8 },
+  { src: g9 },
+  { src: g10 },
+  { src: g11 },
+  { src: g12 },
+  { src: g13 },
+  { src: g14 },
+  { src: g15 },
+  { src: g16 },
+  { src: g17 },
+  { src: g18 },
+  { src: g19 },
+  { src: g20 },
+  { src: g21 },
+  { src: g22 },
+  { src: g23 },
+  { src: g24 },
+  { src: g25 },
+  { src: g26 },
+  { src: g27 },
+  { src: g28 },
+  { src: g29 },
+  { src: g30 },
+  { src: g31 },
+  { src: g32 },
+  { src: g33 },
+  { src: g34 },
+  { src: g35 },
+  { src: g36 },
+  { src: g37 },
+  { src: g38 },
+  
 ];
 
 /* ═══════════════════════════════════════════════════════════

@@ -10,14 +10,14 @@ import InternationalPartnersSlider from "@/components/InternationalPartnersSlide
 import OurCustomersSlider from "@/components/OurCustomerSlider";
 
 import bearingImg from "@/assets/Bearing-Inspection.jpg";
-import thermalImg from "@/assets/gallery1.jpg";
-import substationImg from "@/assets/gallery5.jpg";
+import thermalImg from "@/assets/gallery/gallery1.jpg";
+import substationImg from "@/assets/gallery/gallery5.jpg";
 
 const services = [
   { icon: Zap, title: "Energy Optimization", desc: "Compressed air, gas, steam & vacuum leak detection. Steam trap audits and air-tight integrity assessments.", link: "/services/energy-optimization", accent: "#f59e0b" },
   { icon: BarChart3, title: "Predictive Analytics", desc: "HT/HV electrical partial discharge detection, infrared thermography, and bearing condition assessments.", link: "/services/predictive-analytics", accent: "#ea580c" },
   { icon: Shield, title: "IIoT-Based CBM (Condition-Based Monitoring with IIoT)", desc: "IIoT monitoring, thermal monitoring, bearing condition monitoring", link: "/products/monitoring-systems", accent: "#f97316" },
-  { icon: Wrench, title: "Training & Certification", desc: "Ultrasound technology training, predictive maintenance certification by Mobius Institute, Australia.", link: "/centre", accent: "#fb923c" },
+  { icon: Wrench, title: "Training & Certification", desc: "MOBIUS Institute, Australia's Ultrasound Analysis Training and Certification programs. Various other trainings related to Industrial Maintenance and Safety provided. ", link: "/centre", accent: "#fb923c" },
 ];
 
 const PRODUCTS = [
@@ -370,7 +370,7 @@ export default function Index() {
 
                 <motion.p variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                   className="text-base text-slate-600 mb-6 max-w-lg leading-relaxed">
-                  We measure, analyse and predict machine faults at a<strong className="text-slate-800 font-semibold">very early stage</strong> and recommend suitable corrective actions for <strong className="text-slate-800 font-semibold">machine reliability, production uptime and energy saving.</strong>
+                  We measure, analyse and predict machine faults at a <strong className="text-slate-800 font-semibold"> very early stage</strong> and recommend suitable corrective actions for <strong className="text-slate-800 font-semibold">machine reliability, production uptime and energy saving. </strong>
                   We adopt an integrated technology approach in our prediction process, using multiple technologies such as <strong className="text-slate-800 font-semibold">Ultrasound Analysis, IR Thermal Imaging, and Endoscopy. </strong> 
                 </motion.p>
 

@@ -322,7 +322,8 @@ const handleSubmit = async (e: React.FormEvent) => {
             </span>
           </h1>
           <p style={{ fontSize: "clamp(14px,1.4vw,17px)", color: "#475569", lineHeight: 1.75, maxWidth: 520 }}>
-            Need a site audit, product information, or a custom solution? Drop us a message and we'll respond within 24 hours.
+            {/* Need a site audit, product information, or a custom solution? Drop us a message and we'll respond within 24 hours. */}
+            If you need any onsite audit/inspection service, product information, or a custom solution ? Kindly drop us a message and we shall respond within 24 hours.
           </p>
         </div>
       </section>
