@@ -831,6 +831,8 @@ const navigation = [
     ],
   },
   { label: "Gallery",      path: "/gallery" },
+
+  // { label: "Associates & Advisors", path: "/associates" },
   { label: "Request Demo", path: "/contact", cta: true },
 ];
 

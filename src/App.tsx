@@ -62,7 +62,7 @@ import EnIndustrialEndoscopy from "./pages/Services/IndustrialEndoscopy";
 // Terms and Privacy Policy
 import TermsAndConditions from "./pages/TermsAndConditions";
 import PrivacyPolicy      from "./pages/PrivacyPolicy";
-// import AssociatesAdvisors from "./components/associates";
+import AssociatesAdvisors from "./components/associates";
 
 const queryClient = new QueryClient();
 
@@ -133,7 +133,7 @@ const App = () => (
             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-            {/* <Route path="/associates" element={<AssociatesAdvisors />} /> */}
+            <Route path="/associates" element={<AssociatesAdvisors />} />
 
           </Routes>
         </Layout>
