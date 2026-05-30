@@ -24,6 +24,9 @@ app.get("/", (req, res) => {
 const allowedOrigins = [
   "http://localhost:8080",
   "https://mahadyuta-technical-solutions.vercel.app",
+  "https://mahadyuta.com",
+  "https://www.mahadyuta.com",
+
 ];
 
 app.use(
