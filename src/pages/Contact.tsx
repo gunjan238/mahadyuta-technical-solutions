@@ -201,7 +201,7 @@ const contactDetails = [
   },
   {
     icon: Clock, label: "Working Hours",
-    lines: ["Monday – Saturday", "9:00 AM – 6:00 PM IST"],
+    lines: ["Monday – Saturday", "9:30 AM – 6:00 PM IST"],
   },
 ];
 
@@ -233,124 +233,130 @@ const Contact = () => {
    Current Contact component is from uploaded file :contentReference[oaicite:0]{index=0}
 */
 
-// const handleSubmit = async (e: React.FormEvent) => {
-//   e.preventDefault();
-//   setSuccess(false);
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setSuccess(false);
 
-//   /* Required field validation */
-//   if (!form.name || !form.email || !form.message) {
-//     toast({
-//       title: "Missing Fields",
-//       description: "Please fill all required fields.",
-//     });
-//     return;
-//   }
+  //   /* Required field validation */
+  //   if (!form.name || !form.email || !form.message) {
+  //     toast({
+  //       title: "Missing Fields",
+  //       description: "Please fill all required fields.",
+  //     });
+  //     return;
+  //   }
 
-//   setSending(true);
+  //   setSending(true);
 
-//   try {
-//     const response = await fetch(
-//       "https://mahadyuta-technical-solutions-xg9p.onrender.com/send-email",
-//       {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(form),
-//       }
-//     );
+  //   try {
+  //     const response = await fetch(
+  //       "https://mahadyuta-technical-solutions-xg9p.onrender.com/send-email",
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(form),
+  //       }
+  //     );
 
-//     /* Safe response handling */
-//     const data = await response.json();
+  //     /* Safe response handling */
+  //     const data = await response.json();
 
-//     if (!response.ok || !data.success) {
-//       throw new Error(
-//         data.message || "Failed to send enquiry"
-//       );
-//     }
+  //     if (!response.ok || !data.success) {
+  //       throw new Error(
+  //         data.message || "Failed to send enquiry"
+  //       );
+  //     }
 
-//     /* Success */
-//     toast({
-//       title: "Enquiry Submitted ✓",
-//       description:
-//         "Your message has been sent successfully. We’ll contact you shortly.",
-//     });
+  //     /* Success */
+  //     toast({
+  //       title: "Enquiry Submitted ✓",
+  //       description:
+  //         "Your message has been sent successfully. We’ll contact you shortly.",
+  //     });
 
-//     setForm(initialForm);
-//     setSuccess(true);
+  //     setForm(initialForm);
+  //     setSuccess(true);
 
-//   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   } catch (error: any) {
-//     console.error("Form Submission Error:", error);
+  //   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  //   } catch (error: any) {
+  //     console.error("Form Submission Error:", error);
 
-//     toast({
-//       title: "Submission Failed",
-//       description:
-//         error.message ||
-//         "Unable to send your enquiry. Please try again later.",
-//     });
-//   } finally {
-//     setSending(false);
-//   }
-// };
+  //     toast({
+  //       title: "Submission Failed",
+  //       description:
+  //         error.message ||
+  //         "Unable to send your enquiry. Please try again later.",
+  //     });
+  //   } finally {
+  //     setSending(false);
+  //   }
+  // };
 
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setSuccess(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSuccess(false);
 
-  if (!form.name || !form.email || !form.message) {
-    toast({ title: "Missing Fields", description: "Please fill all required fields." });
-    return;
-  }
-
-  setSending(true);
-
-  // ✅ Add a 15-second timeout
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 15000);
-
-  try {
-    const response = await fetch(
-      "https://mahadyuta-technical-solutions-demg.onrender.com/send-email",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-        signal: controller.signal,   // ✅ attach abort signal
-      }
-    );
-
-    clearTimeout(timeoutId);         // ✅ clear timer on success
-
-    const data = await response.json();
-
-    if (!response.ok || !data.success) {
-      throw new Error(data.message || "Failed to send enquiry");
+    if (!form.name || !form.email || !form.message) {
+      toast({
+        title: "Missing Fields",
+        description: "Please fill all required fields.",
+      });
+      return;
     }
 
-    toast({
-      title: "Enquiry Submitted ✓",
-      description: "Your message has been sent. We'll contact you shortly.",
-    });
-    setForm(initialForm);
-    setSuccess(true);
+    setSending(true);
 
-  } catch (error: any) {
-    clearTimeout(timeoutId);         // ✅ clear timer on error too
+    try {
+      const response = await fetch(
+        "https://mahadyuta-technical-solutions-demg.onrender.com/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
-    // ✅ User-friendly message for timeout
-    const message = error.name === "AbortError"
-      ? "Request timed out. The server may be starting up — please try again in 30 seconds."
-      : error.message || "Unable to send your enquiry. Please try again later.";
 
-    console.error("Form Submission Error:", error);
-    toast({ title: "Submission Failed", description: message });
+      const data = await response.json();
 
-  } finally {
-    setSending(false);               // ✅ always resets button
-  }
-};
+      if (!response.ok || !data.success) {
+        throw new Error(
+          data.message || "Failed to send enquiry"
+        );
+      }
+
+      toast({
+        title: "Enquiry Submitted ✓",
+        description:
+          "Your message has been sent successfully. We'll contact you shortly.",
+      });
+
+      setForm(initialForm);
+      setSuccess(true);
+
+
+    } catch (error: any) {
+      console.error("Form Submission Error:", error);
+
+
+      toast({
+        title: "Submission Failed",
+        description:
+          error.message ||
+          "Unable to send your enquiry. Please try again later.",
+      });
+
+
+    } finally {
+      setSending(false);
+    }
+  };
+
 
   return (
     <div className="ct-page">
